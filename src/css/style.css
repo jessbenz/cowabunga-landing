@@ -234,8 +234,9 @@ ul.contacts {
       min-height: 500px;
       text-align: center; }
       .headline-section .blurb {
+        margin-left: auto;
         margin-right: auto;
-        margin-left: auto; } }
+        margin-bottom: 2.4rem; } }
 
 .what-section {
   overflow: hidden;
@@ -321,6 +322,9 @@ ul.contacts {
 .stats-section {
   background-color: white;
   padding: 2.8rem 0; }
+  .stats-section .stats-container {
+    padding-left: 15px;
+    padding-right: 15px; }
   .stats-section .card {
     margin: .6rem;
     display: inline-block;
@@ -353,9 +357,12 @@ ul.contacts {
       margin-right: auto; } }
   @media (max-width: 575.98px) {
     .stats-section {
-      padding: 1.1rem 0; }
+      padding: 1.1rem 0 2rem 0; }
+      .stats-section .stats-container {
+        flex-direction: column; }
       .stats-section .card {
-        display: block;
+        margin-left: auto;
+        margin-right: auto;
         width: 100%; } }
 
 .testimonials-section {
@@ -388,15 +395,19 @@ ul.contacts {
       .testimonials-section .testimonial h4 {
         font-size: 1rem; } }
   @media (max-width: 575.98px) {
-    .testimonials-section .container {
-      width: 90%;
-      max-width: 360px; }
-      .testimonials-section .container .testimonial:first-of-type {
-        margin-bottom: 1rem; }
-      .testimonials-section .container .testimonial .nandos-logo {
-        margin-top: 0; }
-      .testimonials-section .container .testimonial h4 {
-        margin-bottom: .9rem; } }
+    .testimonials-section {
+      padding-bottom: 3rem; }
+      .testimonials-section .container {
+        width: 90%;
+        max-width: 360px; }
+        .testimonials-section .container .testimonial:first-of-type {
+          margin-bottom: 1rem; }
+        .testimonials-section .container .testimonial .nandos-logo {
+          margin-top: 0; }
+        .testimonials-section .container .testimonial h4 {
+          margin-bottom: .9rem; }
+        .testimonials-section .container .testimonial .quote-right {
+          bottom: 30px; } }
 
 .contact-section {
   position: relative; }
@@ -443,6 +454,12 @@ ul.contacts {
       font-size: .9rem; }
       .contact-section form .help-block.with-errors {
         color: #FF002E; }
+  @media (max-width: 575.98px) {
+    .contact-section .curve {
+      height: 25px;
+      margin-top: -2.4rem; }
+    .contact-section .card {
+      margin-top: 2.4rem; } }
 
 footer {
   background-color: #312E61;

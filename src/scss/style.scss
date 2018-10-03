@@ -158,8 +158,7 @@ ul {
     }     
     @include media-breakpoint-down(xs) {
         a.logo {
-            margin-left: auto;
-            margin-right: auto;            
+            @include center-with-auto-margin;           
         }        
         ul.contacts {
             display: none;
@@ -220,8 +219,8 @@ ul.contacts {
         min-height: 500px;
         text-align: center;
         .blurb {
-            margin-right: auto;
-            margin-left: auto;
+            @include center-with-auto-margin;
+            margin-bottom: 2.4rem;
         }
     }         
 }
@@ -312,16 +311,14 @@ ul.contacts {
     @include media-breakpoint-down(xs) {
         h2 {
             max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
+            @include center-with-auto-margin;
         }
         .product-images-container {
             min-height: 450px;
         }
         .features-list {
             max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;             
+            @include center-with-auto-margin;             
             padding-left: 0;
             margin-bottom: 2rem;
         }
@@ -331,6 +328,10 @@ ul.contacts {
 .stats-section {
     background-color: white;
     padding: 2.8rem 0; 
+    .stats-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     .card {
         margin: .6rem;
         display: inline-block;
@@ -370,16 +371,18 @@ ul.contacts {
         }        
         .stats-description {
             max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
+            @include center-with-auto-margin;
         }
     }
-    @include media-breakpoint-down(xs) {    
+    @include media-breakpoint-down(xs) {  
+        padding: 1.1rem 0 2rem 0;  
+        .stats-container {
+            flex-direction: column;
+        }
         .card {
-            display: block;
+            @include center-with-auto-margin;
             width: 100%;
         }            
-        padding: 1.1rem 0;
     }
 }
 
@@ -422,17 +425,23 @@ ul.contacts {
         }
     }
     @include media-breakpoint-down(xs) {
+        padding-bottom: 3rem;
         .container {
             width: 90%;
             max-width: 360px;
             .testimonial:first-of-type {
                 margin-bottom: 1rem;
             }
-            .testimonial .nandos-logo {
-                margin-top: 0;
-            }
-            .testimonial h4 {
-                margin-bottom: .9rem;
+            .testimonial {
+                .nandos-logo {
+                    margin-top: 0;
+                }  
+                h4 {
+                    margin-bottom: .9rem;
+                }  
+                .quote-right {
+                    bottom: 30px;
+                }                            
             }
         }
     }        
@@ -470,8 +479,7 @@ ul.contacts {
             margin: -50px auto 1rem auto;
             text-align: center;
             img {
-                margin-left: auto;
-                margin-right: auto;
+                @include center-with-auto-margin;
             }
         }
     }
@@ -494,6 +502,15 @@ ul.contacts {
             }
         }
     }
+    @include media-breakpoint-down(xs) {
+        .curve {
+            height: 25px;
+            margin-top: -2.4rem; 
+        }   
+        .card {
+            margin-top: 2.4rem
+        }        
+    }    
 }
 
 footer {
