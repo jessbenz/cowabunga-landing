@@ -1,0 +1,64 @@
+@keyframes moveInFromLeft {
+    0% { /* starts to the left and totally transparent */
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    40% { /* make it bounce slightly to the right before centering */
+        transform: translateX(20px);
+    }
+
+    100% { /* ends where it began (before animation is applied) */
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    40% {
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes wiggle {
+    0% { 
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }    
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

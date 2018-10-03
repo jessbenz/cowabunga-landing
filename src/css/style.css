@@ -1,0 +1,453 @@
+@keyframes moveInFromLeft {
+  0% {
+    /* starts to the left and totally transparent */
+    opacity: 0;
+    transform: translateX(-100px); }
+  40% {
+    /* make it bounce slightly to the right before centering */
+    transform: translateX(20px); }
+  100% {
+    /* ends where it began (before animation is applied) */
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  40% {
+    transform: translateX(-20px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(10deg); }
+  50% {
+    transform: rotate(0deg); }
+  75% {
+    transform: rotate(-10deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+* {
+  /* to reset all browsers to the same starting point, because values vary slightly from browser to browser */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* so that border & padding are not added to total width and height of element */ }
+
+body {
+  font-family: 'Asap', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #312E61;
+  background: #F2F2F2; }
+
+h1 {
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 1.2; }
+  @media (min-width: 992px) {
+    h1 {
+      font-size: 4.5rem; } }
+  @media (max-width: 575.98px) {
+    h1 {
+      font-size: 3.3rem; } }
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 2.3rem; }
+  @media (max-width: 991.98px) {
+    h2 {
+      margin-bottom: 1.7rem; } }
+  @media (max-width: 575.98px) {
+    h2 {
+      font-size: 1.8rem; } }
+
+h3 {
+  font-size: 1.5rem; }
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 400; }
+  @media (max-width: 575.98px) {
+    h4 {
+      font-size: 1.1rem; } }
+
+.hidden {
+  display: none; }
+
+.form-control {
+  background-color: #F7F7F7; }
+
+label {
+  margin-bottom: 0.2rem; }
+
+.caption {
+  font-size: 13px;
+  color: #5C5C5C;
+  font-style: italic;
+  margin: 0; }
+
+.opacity-50 {
+  opacity: .5; }
+
+.opacity-60 {
+  opacity: .6; }
+
+.opacity-70 {
+  opacity: .7; }
+
+.icon-space-right {
+  margin-right: 5px; }
+
+.icon-space-left {
+  margin-left: 5px; }
+
+.accent-text {
+  color: #F8D435; }
+
+a:not([href]):not([tabindex]) {
+  color: initial; }
+
+a.btn,
+.btn {
+  background-color: white;
+  border-radius: 100px;
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.35);
+  color: #312E61;
+  padding: .6rem 1.5rem;
+  font-weight: 500; }
+
+a.btn-accent,
+.btn-accent {
+  background-color: #F8D435;
+  color: black; }
+
+a.btn-lg,
+.btn-lg {
+  font-size: 1.125rem;
+  padding: .8rem 1.7rem; }
+  @media (max-width: 575.98px) {
+    a.btn-lg,
+    .btn-lg {
+      font-size: 1.1rem; } }
+
+a.btn.disabled,
+.btn.disabled,
+.btn:disabled,
+a.btn:disabled {
+  box-shadow: none;
+  background-color: #B4B4B4;
+  color: rgba(0, 0, 0, 0.5); }
+
+ul li {
+  list-style: none; }
+
+.card {
+  border: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.23), 0px 0px 2px 0px rgba(0, 0, 0, 0.15);
+  padding: 1rem 1.5rem; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  z-index: 1001;
+  background: white;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25); }
+  .header a.logo,
+  .header a.logo:hover {
+    text-decoration: none; }
+  @media (max-width: 767.98px) {
+    .header ul.contacts {
+      font-size: .85rem; } }
+  @media (max-width: 575.98px) {
+    .header a.logo {
+      margin-left: auto;
+      margin-right: auto; }
+    .header ul.contacts {
+      display: none; } }
+
+ul.contacts {
+  margin: 0;
+  padding: 0; }
+  ul.contacts .fa {
+    font-size: 1.3rem;
+    vertical-align: middle; }
+  ul.contacts li {
+    display: inline-block;
+    margin-right: 1em; }
+    ul.contacts li:last-of-type {
+      margin-right: 0; }
+  ul.contacts a, ul.contacts a:hover, ul.contacts a:visited {
+    color: #312E61; }
+
+.headline-section {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  background-image: linear-gradient(rgba(12, 43, 105, 0.3), rgba(12, 43, 105, 0.3)), url(/img/headline-background.jpg);
+  background-size: cover;
+  background-position: top left;
+  min-height: 700px;
+  padding-top: 35px; }
+  .headline-section .btn {
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.5); }
+  .headline-section h1 {
+    color: white;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.71), 0px 2px 5px rgba(0, 0, 0, 0.66); }
+  .headline-section .blurb {
+    margin: 1.4rem 0 3.5rem 0;
+    max-width: 415px;
+    color: white;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.71), 0px 2px 5px rgba(0, 0, 0, 0.76); }
+  .headline-section .btn .fa {
+    font-size: 1.1em; }
+  @media (max-width: 1199.98px) {
+    .headline-section {
+      min-height: 600px;
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); } }
+  @media (max-width: 575.98px) {
+    .headline-section {
+      padding-top: 80px;
+      padding-bottom: 70px;
+      min-height: 500px;
+      text-align: center; }
+      .headline-section .blurb {
+        margin-right: auto;
+        margin-left: auto; } }
+
+.what-section {
+  overflow: hidden;
+  padding-top: 1.5rem; }
+  .what-section .product-images-container {
+    position: relative;
+    min-height: 560px; }
+    .what-section .product-images-container img.product-image {
+      position: absolute; }
+    .what-section .product-images-container .tablet-img {
+      width: 676px;
+      top: 0;
+      right: 0; }
+      @media (min-width: 992px) {
+        .what-section .product-images-container .tablet-img {
+          width: 740px; } }
+      @media (max-width: 767.98px) {
+        .what-section .product-images-container .tablet-img {
+          right: 100px; } }
+      @media (max-width: 575.98px) {
+        .what-section .product-images-container .tablet-img {
+          width: 560px;
+          right: 30px; } }
+    .what-section .product-images-container .phone-img {
+      width: 480px;
+      bottom: -10px;
+      right: 0; }
+      @media (min-width: 992px) {
+        .what-section .product-images-container .phone-img {
+          width: 520px; } }
+      @media (max-width: 767.98px) {
+        .what-section .product-images-container .phone-img {
+          margin-right: -90px; } }
+      @media (max-width: 575.98px) {
+        .what-section .product-images-container .phone-img {
+          margin-right: -50px;
+          width: 380px;
+          bottom: -20px; } }
+  .what-section .features-list {
+    line-height: 1.4;
+    padding-bottom: 35px; }
+    .what-section .features-list .icon-container {
+      width: 80px;
+      position: relative;
+      text-align: center; }
+      .what-section .features-list .icon-container .fa {
+        font-size: 2rem;
+        color: #5A80B7; }
+    .what-section .features-list li.driver-app .fa {
+      font-size: 2.7rem; }
+    .what-section .features-list li.happy-customers .fa:last-of-type {
+      font-size: .7rem;
+      position: absolute;
+      top: 0;
+      right: 11px; }
+  @media (max-width: 767.98px) {
+    .what-section .features-list {
+      border: 0;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.23), 0px 0px 2px 0px rgba(0, 0, 0, 0.15);
+      padding: 1rem 1.5rem;
+      margin-bottom: 3rem;
+      padding-bottom: 0; }
+      .what-section .features-list li {
+        margin-bottom: .5rem; }
+      .what-section .features-list li:last-of-type {
+        margin-bottom: 0; } }
+  @media (max-width: 575.98px) {
+    .what-section h2 {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto; }
+    .what-section .product-images-container {
+      min-height: 450px; }
+    .what-section .features-list {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0;
+      margin-bottom: 2rem; } }
+
+.stats-section {
+  background-color: white;
+  padding: 2.8rem 0; }
+  .stats-section .card {
+    margin: .6rem;
+    display: inline-block;
+    max-width: 270px;
+    width: 30%;
+    color: #7c7c7c;
+    padding: 1rem .5rem; }
+    .stats-section .card img {
+      width: 66px; }
+    .stats-section .card h2 {
+      font-weight: 400;
+      font-size: 2.5rem;
+      margin: 1rem 0 .2rem 0; }
+    .stats-section .card h4 {
+      margin: 0; }
+  @media (max-width: 991.98px) {
+    .stats-section .card h2 {
+      font-size: 2rem; }
+    .stats-section .card h4 {
+      font-size: 1rem; } }
+  @media (max-width: 767.98px) {
+    .stats-section .card {
+      margin: .4rem;
+      padding: .5rem; }
+      .stats-section .card h2 {
+        font-size: 1.7rem; }
+    .stats-section .stats-description {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto; } }
+  @media (max-width: 575.98px) {
+    .stats-section {
+      padding: 1.1rem 0; }
+      .stats-section .card {
+        display: block;
+        width: 100%; } }
+
+.testimonials-section {
+  padding: 1rem 0 5rem 0;
+  background-color: white; }
+  .testimonials-section .testimonial {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 1.7rem; }
+    .testimonials-section .testimonial .quote-mark {
+      position: absolute;
+      z-index: 1;
+      width: 60px; }
+    .testimonials-section .testimonial .quote-left {
+      top: -20px;
+      left: -15px; }
+    .testimonials-section .testimonial .quote-right {
+      bottom: 57px;
+      right: -15px; }
+    .testimonials-section .testimonial h4 {
+      font-size: 1.12rem;
+      font-style: italic;
+      margin-bottom: 1.2rem; }
+    .testimonials-section .testimonial .nandos-logo {
+      margin-top: 7px; }
+  @media (max-width: 991.98px) {
+    .testimonials-section .testimonial {
+      padding-left: 1.2rem;
+      padding-right: 1.2rem; }
+      .testimonials-section .testimonial h4 {
+        font-size: 1rem; } }
+  @media (max-width: 575.98px) {
+    .testimonials-section .container {
+      width: 90%;
+      max-width: 360px; }
+      .testimonials-section .container .testimonial:first-of-type {
+        margin-bottom: 1rem; }
+      .testimonials-section .container .testimonial .nandos-logo {
+        margin-top: 0; }
+      .testimonials-section .container .testimonial h4 {
+        margin-bottom: .9rem; } }
+
+.contact-section {
+  position: relative; }
+  .contact-section .curve {
+    background-color: white;
+    -webkit-clip-path: ellipse(50% 100% at 50% 0%);
+    clip-path: ellipse(50% 100% at 50% 0%);
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    margin-top: -1rem; }
+  .contact-section .card {
+    position: relative;
+    z-index: 800;
+    width: 90%;
+    max-width: 340px;
+    margin: 1rem auto 3rem auto;
+    padding: 1.5rem;
+    box-shadow: 0px 14px 18px 0px rgba(0, 0, 0, 0.23), 0px 0px 2px 0px rgba(0, 0, 0, 0.26); }
+    .contact-section .card .circle {
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.18), 0px 2px 3px 0px rgba(0, 0, 0, 0.28);
+      width: 72px;
+      height: 72px;
+      margin: -50px auto 1rem auto;
+      text-align: center; }
+      .contact-section .card .circle img {
+        margin-left: auto;
+        margin-right: auto; }
+  .contact-section form {
+    margin-top: 1rem; }
+    .contact-section form .form-group:last-of-type {
+      margin-bottom: 0; }
+    .contact-section form .btn {
+      margin-top: 1.5rem; }
+    .contact-section form .message-sent {
+      color: #52B452;
+      margin: 1.6rem 0 0 0; }
+    .contact-section form .help-block {
+      font-size: .9rem; }
+      .contact-section form .help-block.with-errors {
+        color: #FF002E; }
+
+footer {
+  background-color: #312E61;
+  padding: 1rem 0; }
+  footer ul.contacts .fa {
+    color: white; }
+  footer ul.contacts a {
+    color: white; }
