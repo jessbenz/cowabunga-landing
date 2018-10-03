@@ -211,11 +211,17 @@ ul.contacts {
   min-height: 700px;
   padding-top: 35px; }
   .headline-section .btn {
-    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.5); }
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.5);
+    animation: moveInBottom .5s ease-out .75s;
+    /* last value is the delay */
+    animation-fill-mode: backwards;
+    /* this will automatically apply styles from the 0% keyframe. That way on load the button is invisible. */ }
   .headline-section h1 {
+    animation: moveInFromLeft 1s ease-out;
     color: white;
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.71), 0px 2px 5px rgba(0, 0, 0, 0.66); }
   .headline-section .blurb {
+    animation: moveInFromRight 1s ease-out;
     margin: 1.4rem 0 3.5rem 0;
     max-width: 415px;
     color: white;
@@ -261,6 +267,7 @@ ul.contacts {
           width: 560px;
           right: 30px; } }
     .what-section .product-images-container .phone-img {
+      animation-delay: 1s;
       width: 480px;
       bottom: -10px;
       right: 0; }
